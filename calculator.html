@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <style>
-        p{
-            display: inline;
-        }
+      p {
+        display: inline;
+      }
     </style>
-</head>
-<body>
-    <input type="text" name="" id="first"> +
-    <input type="text" name="" id="second"> =
-<p id="values"></p> 0 <br>
-<button>summation</button>
-</body>
+  </head>
+  <body>
+    <input type="text" name="" id="first" placeholder="Enter first number" /> +
+    <input type="text" name="" id="second" placeholder="Enter second number" />
+    =
+    <p id="result">0</p>
+    <br><br>
+    <button id="sum">summation</button>
+    <script>
+        document.getElementById('sum').addEventListener('click',function(){
+            const firstNum = document.getElementById('first');
+            const firstNumValue = firstNum.value;
+            const firstNumValueInt = parseInt(firstNumValue);
+            const secondNum = document.getElementById('second');
+            const secondNumValue = secondNum.value;
+            const secondNumValueInt = parseInt(secondNumValue);
+            const result = document.getElementById('result');
+            result.innerText = firstNumValueInt + secondNumValueInt
+        })
+        
+    </script>
+    
+  </body>
 </html>
